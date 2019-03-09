@@ -50,10 +50,7 @@ $(function() {
     });
 
     describe('The menu', function() {
-        let body;
-        beforeEach(function() {
-            body = document.getElementsByTagName('body')[0];
-        });
+        const body = document.getElementsByTagName('body')[0];
 
         /* A test that ensures the menu element is
          * hidden by default.
@@ -89,8 +86,8 @@ $(function() {
          * a single .entry element within the .feed container.
          */
         it('should has at least a single .entry element', function(done){
-            const entry = document.querySelector('.entry');
-            expect(entry).not.toBeNull();
+            const entry = document.querySelectorAll('.feed .entry');
+            expect(entry.length).toBeGreaterThan(0);
             done();
         });
     });
